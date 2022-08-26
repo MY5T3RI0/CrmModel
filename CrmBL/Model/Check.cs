@@ -24,6 +24,10 @@ namespace CrmBL.Model
 
         public virtual Sell Sell { get; set; }
 
+        public virtual ICollection<Sell> Sells { get; set; }
+
+        public decimal Price { get; set; }
+
         public override string ToString()
         {
             return $"Чек №{CheckId} от {Created.ToString("dd.MM.yy hh:mm")}";

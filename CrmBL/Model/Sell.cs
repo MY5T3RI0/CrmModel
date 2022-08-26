@@ -14,6 +14,10 @@ namespace CrmBL.Model
 
         public virtual Product Product { get; set; }
 
+        public int CheckId { get; set; }
+
+        public virtual Check Check { get; set; }
+
         public ICollection<Check> Checks { get; set; }
     }
 }
