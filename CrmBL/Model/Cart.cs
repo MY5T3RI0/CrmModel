@@ -37,11 +37,11 @@ namespace CrmBL.Model
 
         public IEnumerator GetEnumerator()
         {
-            foreach(var product in Products)
+            foreach (var product in Products.Keys)
             {
-                for (int i = 0; i < product.Value; i++)
+                for (int i = 0; i < Products[product]; i++)
                 {
-                    yield return product.Key;
+                    yield return product;
                 }
             }
         }

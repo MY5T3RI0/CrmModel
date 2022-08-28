@@ -14,7 +14,7 @@ namespace CrmBL.Model.Tests
         [TestMethod()]
         public void StartTest()
         {
-            var shopModel = new ShopModel();
+            var shopModel = new ShopModel(3);
             shopModel.Start();
         }
     }

@@ -22,9 +22,11 @@ namespace CrmBL.Model
 
         public int ExitCustomer { get; set; }
 
+        public EventHandler<Check> CartOut;
+
         public CashDesk(int number, Seller seller, CrmContext db)
         {
-            Number = number;
+            Number = number + 1;
             Seller = seller;
             Carts = new Queue<Cart>();
             IsModel = true;
@@ -103,10 +105,17 @@ namespace CrmBL.Model
                 if (!IsModel)
                 {
                     db.SaveChanges();
-                } 
+                }
+
+                CartOut?.Invoke(this, check);
             }
 
             return sum;
+        }
+
+        public override string ToString()
+        {
+            return "Касса № " + Number;
         }
     }
 }
